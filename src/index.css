@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #7C3AED; /* violet-600 */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', 'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: rgb(226 232 240); /* slate-200 */
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(124,58,237,0.18), transparent 60%),
+              radial-gradient(1000px 500px at 80% 10%, rgba(37,99,235,0.14), transparent 60%),
+              linear-gradient(180deg, #0b1220 0%, #0a0f1a 100%);
+}
+
+.container-base {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-md px-5 py-2.5 text-white font-medium shadow-md transition focus:outline-none focus:ring-2 focus:ring-offset-2;
+  background: linear-gradient(135deg, #7C3AED, #6366F1);
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center rounded-md border border-slate-600/60 px-5 py-2.5 text-slate-200 hover:bg-white/5 transition;
+}
+
+.section-title {
+  @apply text-2xl sm:text-3xl font-semibold tracking-tight;
+}
+
+.card {
+  @apply rounded-xl border border-slate-800/80 bg-slate-900/70 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.6)] hover:shadow-[0_15px_35px_-15px_rgba(0,0,0,0.7)] transition; 
+}
+
+.card-body {
+  @apply p-4 sm:p-6;
+}
+
+/* Glass navbar */
+.nav-glass {
+  @apply bg-slate-900/70 backdrop-blur border-b border-slate-800/80;
+}
+
+/* Gradient brand text */
+.brand-gradient {
+  background: linear-gradient(135deg, #94a3b8 0%, #cbd5e1 50%, #64748b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-fade-in-up { animation: fade-in-up 700ms ease-out both; }
+.animate-float { animation: float 5s ease-in-out infinite; }
